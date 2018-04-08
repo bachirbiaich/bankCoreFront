@@ -1,0 +1,19 @@
+.container{
+    margin-top: 200px;
+}
+
+.boxLogin{
+    padding: 30px;
+    background-color: rgba(255, 210, 40, 0.46);
+    border-radius: 7px;
+    color: #31b0d5;
+}
+.input-group-addon{
+    background-color: #31b0d5;
+    border: none;
+    color: white;
+}
+.input-group input{
+    border:none;
+    border-radius: 0px;
+}

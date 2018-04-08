@@ -1,0 +1,21 @@
+<bc-menu></bc-menu>
+<div class="superContentBloc">
+  <h4 class="title">Virements</h4>
+  <i class="fa fa-3x fa-plus-square" aria-hidden="true" (click)="addVirement()"></i>
+  <div class="contentBloc">
+    <div>
+      <p class="col-xs-3 left">Date</p>
+      <p class="col-xs-4 center">Montant</p>
+      <p class="col-xs-4 center">Destinataire</p>
+      <p class="col-xs-1 center">Fait</p>
+    </div>
+    <div *ngFor="let virement of virements" class="row">
+      <p class="col-xs-3">{{virement.date | date: 'dd/MM/yyyy'}}</p>
+      <p [hidden]="!virement.done" class="col-xs-4">{{virement.montant | number : '1.2-2'}}€</p>
+      <p [hidden]="!virement.done" class="col-xs-4">{{virement.recipient_iban}}</p>
+      <input class="col-xs-4" [hidden]="virement.done" [(ngModel)]="virement.montant" type="number">
+      <input class="col-xs-4" [hidden]="virement.done" [(ngModel)]="virement.recipient_iban" type="text">
+      <i [ngClass]="virement.done ? 'fa fa-thumbs-up col-xs-1':'fa fa-paper-plane col-xs-1'" (click)="validVirement(virement)"></i>
+    </div>
+  </div>
+</div>

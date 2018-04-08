@@ -1,0 +1,32 @@
+.tmp
+tmp/
+www/.sass-cache/
+.sass-cache/
+node_modules/
+www/bower_components/
+/bower_components
+bower_components/
+coverage/
+platforms/
+plugins/
+*.swp
+*.swo
+*.log
+.gradle
+
+# IDE files
+.vs
+nbproject
+/*.jsproj
+/*.jsproj.*
+/*.sln
+taco.json
+
+# generated files
+bin/
+gen/
+build/
+bld/
+
+# OS X
+.DS_Store

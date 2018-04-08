@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: rgba(255, 190, 77, 0.14) !important;
+}
+button{
+    border-radius: 0px !important;
+}
+input{
+    background-color: rgba(255, 243, 199, 1) !important;
+}
+.hidden{
+    display: none;
+}
+.blocContainer{
+    max-width: 1600px;
+    margin: 50px auto;
+}
+.superContentBloc{
+    float: left;
+    padding: 30px;
+    background-color: rgba(255, 210, 40, 0.46);
+    border-radius: 7px;
+    width: 70%;
+}
+.contentBloc{
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    min-height: 426px;
+}
+.title{
+    background-color: #31b0d5;
+    color: white;
+    margin: 0;
+    border-radius: 7px 10px 0px 0px;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase
+}

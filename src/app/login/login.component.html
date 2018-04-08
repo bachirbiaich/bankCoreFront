@@ -1,0 +1,20 @@
+<div class="container" >
+  <div class="col-lg-4 col-lg-offset-4 boxLogin">
+    <form class="form-signin" (ngSubmit)="login()">
+      <h2 class="form-signin-heading text-center">E-BANKING</h2>
+      <br>
+      <div class="input-group">
+        <div class="input-group-addon">@</div>
+        <input type="email" name="mail" class="form-control" placeholder="Email" [(ngModel)]="mail" required="true">
+      </div>
+      <br>
+      <div class="input-group">
+        <div class="input-group-addon">?</div>
+        <input type="password" name="password" class="form-control" placeholder="Code secret" [(ngModel)]="password" required="true">
+      </div>
+      <br>
+      <button class="btn btn-lg btn-block" [ngClass]="{'btn-info': !isFetching&&formIsOk , 'btn-warning': isFetching, 'btn-danger': !isFetchning&&!formIsOk}" type="submit">
+        <i *ngIf="isFetching" class="fa fa-circle-o-notch fa-spin"></i> Connexion</button>
+    </form>
+  </div>
+</div>
