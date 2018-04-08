@@ -24,7 +24,7 @@ export class SessionService {
   static getLoggedInUser():User{
     if(SessionService.isLoggedIn()){
       const jsonUser = JSON.parse(sessionStorage.getItem('user'));
-      return new User(jsonUser._id,jsonUser.firstname,jsonUser.lastname,jsonUser.mail,jsonUser.password);
+      return new User(jsonUser._id,jsonUser.firstname,jsonUser.lastname,jsonUser.mail,jsonUser.password,jsonUser.canVir);
     }
     else
       return null;
