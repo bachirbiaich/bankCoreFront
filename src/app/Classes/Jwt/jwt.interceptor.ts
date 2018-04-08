@@ -22,7 +22,7 @@ export class JwtInterceptor implements HttpInterceptor {
       }
     }, (err: any) => {
       if (err instanceof HttpErrorResponse) {
-        if (err.status === 401 || err.status === 0) { 
+        if (err.status === 401 || err.status === 0 || err.status === 500) { 
           SessionService.endSession();
           this.router.navigate(['/login']);
         }
