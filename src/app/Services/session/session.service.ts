@@ -15,6 +15,7 @@ export class SessionService {
   static endSession(){
     sessionStorage.removeItem('user');
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('admin');
   }
 
   static getToken():string{
@@ -24,7 +25,7 @@ export class SessionService {
   static getLoggedInUser():User{
     if(SessionService.isLoggedIn()){
       const jsonUser = JSON.parse(sessionStorage.getItem('user'));
-      return new User(jsonUser._id,jsonUser.firstname,jsonUser.lastname,jsonUser.mail,jsonUser.password,jsonUser.canVir);
+      return new User(jsonUser._id,jsonUser.firstname,jsonUser.lastname,jsonUser.email,jsonUser.password,jsonUser.canVir);
     }
     else
       return null;
@@ -34,5 +35,19 @@ export class SessionService {
     if(sessionStorage.getItem('user') && sessionStorage.getItem('token'))
       return true;
     return false;
+  }
+
+  static isAdmin():boolean{
+    if(SessionService.isLoggedIn()){
+      if(sessionStorage.getItem('admin') == "yes")
+        return true;
+    }
+    return false;
+  }
+
+  static setAdmin():void{
+    if(SessionService.isLoggedIn()){
+      sessionStorage.setItem('admin','yes');
+    }
   }
 }

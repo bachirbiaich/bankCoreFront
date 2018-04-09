@@ -16,7 +16,7 @@ export class VirementsComponent implements OnInit {
   constructor(private router: Router, private virementService: VirementService) { }
 
   ngOnInit() {
-    if (!SessionService.isLoggedIn()) {
+    if (!SessionService.isLoggedIn() || SessionService.isAdmin()) {
       this.router.navigate(['/login']);
     } else {
       this.virementService.getVirements()

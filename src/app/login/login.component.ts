@@ -19,7 +19,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if(SessionService.isLoggedIn())
-      this.router.navigate(['/dashboard']);
+    {
+      if(SessionService.isAdmin())
+        this.router.navigate(['admin/dashboard']);
+      else
+        this.router.navigate(['/dashboard']);
+    }
+      
     this.isFetching = false;
     this.formIsOk = true;
   }
@@ -32,9 +38,22 @@ export class LoginComponent implements OnInit {
         .subscribe(
           data => {
             SessionService.startSession(data.user,data.token);
-            setTimeout(() => {
-              this.router.navigate(['/dashboard']);
-            }, 1000);
+            this.userService.checkIfIsAdmin()
+            .subscribe(
+              data => {
+                //ADMIN
+                //On peut checker si l'utilisateur connecté est admin directement avec SessionService.isAdmin()
+                SessionService.setAdmin();
+                setTimeout(() => {
+                  this.router.navigate(['/admin/dashboard']);
+                }, 1000);
+              },
+              err => {
+                //NON ADMIN
+                setTimeout(() => {
+                  this.router.navigate(['/dashboard']);
+                }, 1000);
+              });
           },
           err => {
             this.formIsOk = false;

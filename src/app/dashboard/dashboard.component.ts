@@ -22,7 +22,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (!SessionService.isLoggedIn()) {
+    console.log("isAdmin : "+SessionService.isAdmin());
+    if (!SessionService.isLoggedIn() || SessionService.isAdmin()) {
       this.router.navigate(['/login']);
     } else {
       this.compteService.getComptes()

@@ -23,10 +23,14 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './menu/menu.component';
 import { VirementsComponent } from './virements/virements.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { OrderByPipe } from './Pipes/order-by.pipe';
+import { AdminMenuComponent } from './admin-menu/admin-menu.component';
+
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'admin/dashboard', component: AdminDashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'virements', component: VirementsComponent },
   { path: '**', redirectTo: 'login'}
@@ -39,7 +43,9 @@ const appRoutes: Routes = [
     DashboardComponent,
     MenuComponent,
     VirementsComponent,
-    OrderByPipe
+    OrderByPipe,
+    AdminDashboardComponent,
+    AdminMenuComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

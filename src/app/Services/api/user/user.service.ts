@@ -14,4 +14,8 @@ export class UserService extends ApiService{
     const body = { email: mail, password: password};
     return this.http.post<any>(`${this.apiURI}/login`, body);
   }
+
+  checkIfIsAdmin(): Observable<any>{
+    return this.http.get<any>(`${this.apiURI}/isAnAdminLoggedIn`);
+  }
 }

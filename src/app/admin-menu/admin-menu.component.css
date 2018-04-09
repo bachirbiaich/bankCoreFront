@@ -1,0 +1,82 @@
+.mini-submenu{
+    display:none;  
+    background-color: rgba(0, 0, 0, 0);  
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    padding: 9px;  
+    /*position: relative;*/
+    width: 42px;
+  
+  }
+  
+  .mini-submenu:hover{
+    cursor: pointer;
+  }
+  
+  .mini-submenu .icon-bar {
+    border-radius: 1px;
+    display: block;
+    height: 2px;
+    width: 22px;
+    margin-top: 3px;
+  }
+  
+  .mini-submenu .icon-bar {
+    background-color: #000;
+  }
+  
+  #slide-submenu{
+    background: rgba(0, 0, 0, 0.45);
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .list-group-item.active{
+    background-color: #31b0d5;
+    border: none;
+  }
+
+  .list-group-item{
+      border: none;
+  }
+
+  .list-group{
+    margin-bottom: 0px;
+    min-height: 400px;
+    background-color: white;
+    border-radius: 7px;
+  }
+
+  .sidebar{
+    padding: 30px;
+    background-color: rgba(255, 40, 40, 0.46);
+    border-radius:7px;
+    margin-right: 50px;
+  }
+
+  #logoutBtn{
+    border-radius: 7px !important;
+    margin-top: 20px;
+  }
+
+  .cursor{
+    cursor: pointer;
+  }
+
+  .currentRoute{
+    background-color: rgba(255, 205, 110, 0.19);
+  }
+
+  .profile{
+    background-color: #31b0d5;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 7px 7px 0px 0px;
+  }
