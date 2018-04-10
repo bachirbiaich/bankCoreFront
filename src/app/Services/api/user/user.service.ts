@@ -18,4 +18,13 @@ export class UserService extends ApiService{
   checkIfIsAdmin(): Observable<any>{
     return this.http.get<any>(`${this.apiURI}/isAnAdminLoggedIn`);
   }
+
+  getAllUser(){
+    return this.http.get<any>(`${this.apiURI}/api/Users`);
+  }
+
+  authorizeUser(user): Observable<any>{
+    user.canVir = true;
+    return this.http.put<any>(`${this.apiURI}/api/Users/${user._id}`, user);
+  }
 }

@@ -14,7 +14,7 @@ export class AdminMenuComponent implements OnInit {
 
   menuItems:any = [
     {'name':'Utilisateurs','route':'/admin/dashboard','faIconClass':'line-chart'},
-    {'name':'Droits','route':'/admin/dashboard','faIconClass':'university'}
+    {'name':'Droits','route':'/admin/droits','faIconClass':'university'}
   ];
 
   currentRoute:string;

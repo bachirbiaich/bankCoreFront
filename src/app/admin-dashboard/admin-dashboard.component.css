@@ -1,0 +1,21 @@
+div.userBloque{
+    border-radius: 5px;
+    background: red;
+    color:white;
+    cursor: not-allowed;
+    width: 70%;
+    text-align: center;
+}
+
+div.userAuthorised{
+    border-radius: 5px;
+    background: forestgreen;
+    color:white;
+    cursor: default;
+    width: 80%;
+    text-align: center;
+}
+
+.changeRight{
+
+}

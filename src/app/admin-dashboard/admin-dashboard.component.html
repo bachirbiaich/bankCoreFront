@@ -2,6 +2,18 @@
 <div class="superContentBloc">
     <h4 class="title">Admin Dashboard</h4>
   <div class="contentBloc">
-     
+    <h5>Liste des utilisateurs</h5>
+    <div *ngFor="let user of listUsers" class="row">
+      <p class="col-xs-2">{{user.lastname}}</p>
+      <p class="col-xs-2">{{user.firstname}}</p>
+      <p class="col-xs-2">{{user.email}}</p>
+      <div class="col-xs-3">
+        <div class="userBloque" *ngIf="!user.canVir">Bloqué</div>
+        <div class="userAuthorised" *ngIf="user.canVir">Autorisé</div>
+      </div>
+      <div class="col-xs-3">
+          <button (click)="autorize(user)" class="changeRight" *ngIf="!user.canVir"><i class="fa fa-university"></i> Autorisé l'utilisateur</button>
+      </div>
+    </div>
   </div>
 </div>
