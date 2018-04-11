@@ -13,6 +13,7 @@
       </div>
       <div class="col-xs-3">
           <button (click)="autorize(user)" class="changeRight" *ngIf="!user.canVir"><i class="fa fa-university"></i> Autorisé l'utilisateur</button>
+          <button (click)="autorize(user)" class="changeRight" *ngIf="user.canVir"><i class="fa fa-university"></i> Bloquer l'utilisateur</button>
       </div>
     </div>
   </div>
