@@ -1,7 +1,9 @@
 <bc-menu></bc-menu>
 <div class="superContentBloc">
   <h4 class="title">Virements</h4>
-  <i class="fa fa-3x fa-plus-square" aria-hidden="true" (click)="addVirement()"></i>
+  <div [hidden]='!user.canVir'>
+    <i class="fa fa-3x fa-plus-square" aria-hidden="true" (click)="addVirement()"></i>
+  </div>
   <div class="contentBloc">
     <div>
       <p class="col-xs-3 left">Date</p>
