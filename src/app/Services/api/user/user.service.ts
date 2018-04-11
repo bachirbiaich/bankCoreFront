@@ -29,6 +29,6 @@ export class UserService extends ApiService {
 
   authorizeUser(user): Observable<any>{
     user.canVir = true;
-    return this.http.put<any>(`${this.apiURI}/api/Users/${user._id}`, user);
+    return this.http.patch<any>(`${this.apiURI}/api/Users/${user._id}`, user);
   }
 }
