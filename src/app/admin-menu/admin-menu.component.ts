@@ -14,8 +14,7 @@ import { User } from '../Classes/user';
 export class AdminMenuComponent implements OnInit {
 
   menuItems:any = [
-    {'name':'Utilisateurs','route':'/admin/dashboard','faIconClass':'line-chart'},
-    {'name':'Droits','route':'/admin/droits','faIconClass':'university'}
+    {'name':'Droits','route':'/admin/dashboard','faIconClass':'university'}
   ];
 
   currentRoute:string;
@@ -25,11 +24,6 @@ export class AdminMenuComponent implements OnInit {
   constructor(private router: Router, private compteService: CompteService) {
     this.currentRoute = this.router.url;
     this.user = SessionService.getLoggedInUser();
-    this.compteService.getComptes()
-    .subscribe(res => {
-      console.log('coucou user service');
-      console.log(res);
-    });
   }
 
   ngOnInit() {
