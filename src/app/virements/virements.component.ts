@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SessionService } from '../Services/session/session.service';
 import { Virement } from '../Classes/virement';
 import { VirementService } from '../Services/api/virement/virement.service';
+import { User } from '../Classes/user';
 
 @Component({
   selector: 'bc-virements',
@@ -12,6 +13,7 @@ import { VirementService } from '../Services/api/virement/virement.service';
 export class VirementsComponent implements OnInit {
 
   virements: Array<Virement> = [];
+  user: User;
 
   constructor(private router: Router, private virementService: VirementService) { }
 
@@ -19,6 +21,7 @@ export class VirementsComponent implements OnInit {
     if (!SessionService.isLoggedIn() || SessionService.isAdmin()) {
       this.router.navigate(['/login']);
     } else {
+      this.user = SessionService.getLoggedInUser();
       this.virementService.getVirements()
         .subscribe(resp => {
           resp.map(element => {
@@ -27,15 +30,14 @@ export class VirementsComponent implements OnInit {
         });
       console.log(this.virements);
     }
-
   }
 
   addVirement() {
-    this.virements.push(new Virement('', 0, '', new Date(), false));
+    this.virements.push(new Virement('', 0, this.user._id, new Date(), false));
   }
 
   validVirement(virement: Virement) {
-    virement.recipient_iban = virement.recipient_iban.replace(/\s/g,'');
+    virement.recipient_iban = virement.recipient_iban.replace(/\s/g, '');
     if (virement.isValid()) {
       this.virementService.addVirements(virement)
       .subscribe(resp => {
